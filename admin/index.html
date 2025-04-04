@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Русофобія</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .loading-text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .progress-bar {
+            width: 200px;
+            height: 4px;
+            background-color: #333;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            width: 0;
+            background-color: #d01d3e;
+            animation: load 2s linear forwards;
+        }
+        
+        @keyframes load {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="loading-text", style="color: #d01d3e"><strong>Шукаємо рабів</strong></div>
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+    <p>Галицький All Capone//Mafia</p>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "slave.html"; // Замените на URL вашей основной страницы
+        }, 2000); // 3000 миллисекунд = 3 секунды
+    </script>
+
+</body>
+</html>

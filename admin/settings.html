@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Галицький</title>
+
+    <link rel="icon" href="icon.jpeg" type="image/x-icon">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../button.css">
+    <link rel="stylesheet" href="../point.css">
+
+    <script src="../script.js"></script>
+
+</head>
+    
+
+<body>
+
+    <header style="color: #d01d3e;">‼️ Як налаштувати бота мафії? ‼️</header>
+    
+    <div class="container">
+
+        <div class="rules">
+
+        <h3>Налаштування за замовченням:</h3>
+
+            <div class="btn-block">
+                <div class="btn-rules" onclick="toggleContent(this)">
+                    🕐 Таймінги
+                    <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                </div>
+                <div class="btn-content">
+                   
+                    <ul class="list-base dark-list">Реєстрація: 360</ul>
+                    <ul class="list-base dark-list">Ніч: 60</ul>
+                    <ul class="list-base dark-list">День: 60</ul>
+                    <ul class="list-base dark-list">Голосування: 60</ul>
+                    <ul class="list-base dark-list">Підтвердження: 60</ul>
+                    <ul class="list-base dark-list">Рулетка: 15</ul>
+                </div>
+            </div>
+
+
+            <div class="btn-block">
+                <div class="btn-rules" onclick="toggleContent(this)">
+                    🙊 Мовчанка
+                    <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                </div>
+                <div class="btn-content">
+                   
+                    <ul class="list-base dark-list">Для вбитих: Так</ul>
+                    <ul class="list-base dark-list">Для сплячих: Ні</ul>
+                    <ul class="list-base dark-list">Для неграючих: Так</ul>
+                </div>
+            </div>
+
+            <div class="btn-block">
+                <div class="btn-rules" onclick="toggleContent(this)">
+                    🧰 Загальні
+                    <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                </div>
+                <div class="btn-content">
+                   
+                    <ul class="list-base dark-list">Пін реєстрації: Так</ul>
+                    <ul class="list-base dark-list">Видалення медіа: Ні</ul>
+                    <ul class="list-base dark-list">Показувати емодзі: Так</ul>
+                    <ul class="list-base dark-list">Фільтр лайки: Ні</ul>
+                    <ul class="list-base dark-list">Фільтр посилань: Так</ul>
+                    <ul class="list-base dark-list">Денне афк: Так</ul>
+                    <ul class="list-base dark-list">Захист вмісту: Ні</ul>
+                    <ul class="list-base dark-list">Сповіщення про донат: Так</ul>
+                    <ul class="list-base dark-list">Оповіщення після гри: увімкненно, посилання</ul>
+                    <ul class="list-base dark-list">Відправка медіа: Гіф</ul>
+                    
+
+                </div>
+            </div>
+
+            <h4>🎮 Режими:</h4>
+
+            <div class="btn-block">
+                <div class="btn-rules" onclick="toggleContent(this)">
+                    🎭 Ролі
+                    <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                </div>
+                <div class="btn-content">
+                   
+                    <ul class="list-base dark-list">Роль Слідчого: 6</ul>  
+                    <ul class="list-base dark-list">Роль Лікаря: 4</ul>  
+                    <ul class="list-base dark-list">Роль Самовбивці: 8</ul>  
+                    <ul class="list-base dark-list">Роль Повії: 7</ul>  
+                    
+                    <ul class="list-base dark-list">Роль Джека-Різника: 9</ul>  
+                    <ul class="list-base dark-list">Ролі Маніяка та Чаклуна: 14</ul>  
+                    <ul class="list-base dark-list">Роль Волоцюги: 10</ul>  
+                    <ul class="list-base dark-list">Роль Сержанта: 13</ul>  
+                    
+                    <ul class="list-base dark-list">Ролі Адвоката і Баламута: 13</ul>  
+                    <ul class="list-base dark-list">Роль Щасливчика: 5</ul>  
+                    <ul class="list-base dark-list">Роль Камікадзе: 3</ul>  
+                    <ul class="list-base dark-list">Роль Журналістки: 12</ul>  
+                    
+                    <ul class="list-base dark-list">Роль Домініки: 12</ul> 
+                    <ul class="list-base dark-list">Святий Миколай(зимовий івент) - 4</ul>
+                    <ul class="list-base dark-list">Крампус(зимовий івент) - 4</ul>  
+                    
+                </div>
+            </div>
+
+            <div class="btn-block">
+                <div class="btn-rules" onclick="toggleContent(this)">
+                    🛠 Налаштування
+                    <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                </div>
+                <div class="btn-content">
+                   
+                    <ul class="list-base dark-list">Увімкнення бафів: так(всі)</ul>
+                    <ul class="list-base dark-list">Показувати виконавців: Так</ul>
+                    <ul class="list-base dark-list">K-сть мафії: Більше 1/4</ul>
+                    <ul class="list-base dark-list">Таємне голосування: Відкрите</ul>
+                    <ul class="list-base dark-list">Показувати цілі: Ні</ul>
+                    <ul class="list-base dark-list">Показувати ролі: Так</ul>
+                    <ul class="list-base dark-list">Вбивство союзників: Ні</ul>
+                    <ul class="list-base dark-list">Постріл у першу ніч: Ні</ul>
+                    <ul class="list-base dark-list">Сповіщення про дії: Так</ul>
+                    <ul class="list-base dark-list">Пропуск нічної дії: Ні</ul>
+                    <ul class="list-base dark-list">Пропуск денного голосування: Так</ul>
+                    <ul class="list-base dark-list">Рулетка ігрової ролі: Так</ul>
+                    <ul class="list-base dark-list">Голос за останнього: Ні</ul>
+                    <ul class="list-base dark-list">Чат Слідчого і Сержанта: Так</ul>
+                    <ul class="list-base dark-list">Питання Мирним жителям: Так</ul>
+                    <ul class="list-base dark-list">Взаємодія Дона і Повії: Ні</ul>
+                    <ul class="list-base dark-list">Вбивство Повії Доном та Маніяком: Ні</ul>
+                    <ul class="list-base dark-list">Вбивство під час перевірки: Ні</ul>
+                    <ul class="list-base dark-list">Перемога Самовбивці: Ні</ul>
+                    <ul class="list-base dark-list">Пістолет Слідчого: Так</ul>
+                    <ul class="list-base dark-list">Максимальна кількість гравців: 25</ul>
+                    
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <p class="down">🏴Галицький All Capone//Mafia🏴 January 17, 2024</p>
+
+    </div>
+</body>
+
+
+
+        
