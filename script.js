@@ -53,6 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             // Затримка перед початком анімації часток
             const rect = button.getBoundingClientRect();
+            const offsetX = window.scrollX + rect.left + rect.width / 2;
+            const offsetY = window.scrollY + rect.top + rect.height / 2;
+
             
             // Створюємо 30 часток
             for (let i = 0; i < 30; i++) {
@@ -61,10 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.appendChild(particle);
                 
                 // Визначаємо початкову позицію частки (центральна точка кнопки)
-                particle.style.left = `${rect.left + rect.width / 2}px`;
-                particle.style.top = `${rect.top + rect.height / 2}px`;
+                particle.style.left = `${offsetX}px`;
+                particle.style.top = `${offsetY}px`;
                 
                 // Випадкове переміщення частки
+                
                 particle.style.setProperty('--x', `${(Math.random() - 0.5) * 200}px`);
                 particle.style.setProperty('--y', `${(Math.random() - 0.5) * 200}px`);
                 
