@@ -1,0 +1,164 @@
+.button, .btn-rules {
+    width: 300px; /* Фіксована ширина кнопок */
+    height: 25px;
+    padding: 10px 20px; /* Внутрішні відступи */
+    align-items: center;
+    font-weight: bold;
+
+    background-color: rgba(34, 39, 46);
+    border: 1px solid rgb(64, 72, 87);
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.button-container, .btn-block {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px;
+    
+}
+
+/*************************************************************************************************************************/
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+    
+.button:active {
+    transform: scale(0.97);
+    background-color: #a0142b;
+    transition: none;
+}
+
+.button:not(:active) {
+    transition-duration: 0.7s; 
+}
+
+
+@media (min-width: 768px) {
+    .button-container {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center;  
+    }
+        
+    .button {
+        flex: 1 1 45%; 
+        max-width: 45%;
+    }
+}
+
+
+/*************************************************************************************************************************/
+
+
+.btn-rules {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -2px;
+}
+
+.btn-rules:active {
+    transform: scale(0.97);
+    background-color: #a0142b;
+    transition: none;
+}
+
+.btn-rules:not(:active) {
+    transition-duration: 0.7s;
+}
+
+/*Блок, що відкривається при натисканні*/
+
+.btn-content {
+    background-color: rgba(34, 39, 46);
+    border: 1px solid rgb(64, 72, 87);
+    width: 300px;
+
+    height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    padding: 0;
+    margin: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    
+    transition:
+        height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s ease 0.1s,
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        padding 0.3s ease;
+}
+
+.btn-content.visible {
+    height: auto; 
+    min-height: 0;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 0 20px;
+    margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+    .btn-rules {
+        flex: 1 1 98%;
+        max-width: 98%;
+        width: 98%;
+    }
+    .btn-content.visible {
+        flex: 1 1 98%;
+        max-width: 98%;
+        width: 98%;
+    }
+}
+
+.arrow {
+    width: 15px; 
+    height: 15px;
+    vertical-align: middle; 
+    transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+    transform: rotate(-90deg);
+}
+
+.btn-rab{
+    display: flex;
+    justify-content: center;
+    width: 300px; /* Фіксована ширина кнопок */
+    height: 25px;
+    padding: 10px 20px; /* Внутрішні відступи */
+    align-items: center;
+    font-weight: bold;
+
+    background-color: rgba(34, 39, 46);
+    border: 1px solid rgb(64, 72, 87);
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition-duration: 0.7s;
+}
+
+.btn-rab:active {
+    transform: scale(0.97);
+    background-color: #a0142b;
+    transition: none;
+}
+
+@media (min-width: 768px) {
+    .btn-rab {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        flex: 1 1 45%; 
+        max-width: 45%;
+    }
+}

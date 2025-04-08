@@ -1,0 +1,241 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(255, 209, 255);
+}
+
+header {
+    background-color: rgb(255, 209, 255); 
+    color: rgb(74, 28, 55);
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    color: rgb(74, 28, 55);
+    padding: 15px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    max-width: 5000px;
+    margin: 10px 10px 10px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+    border: 1px solid rgb(255, 0, 136);
+
+    background: rgb(255, 220, 251);
+    transition-duration: 0.7s;
+}
+
+.down {
+    font-size: 10px;
+    opacity: 0.33;
+    text-align: center;
+}
+
+.poloska {
+    display: block;
+    width: 100%; /* Довжина лінії */
+    height: 1px; /* Товщина лінії */
+    background: rgb(255, 0, 136);
+    margin: 10px auto; /* Відступи зверху/знизу + центрування */
+}
+
+.image-container {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: auto; /* или фиксированная ширина, например 500px */
+    height: auto; /* задайте нужную высоту */
+    display: flex;
+    justify-content: center; /* центрирование по горизонтали */
+    align-items: center;     /* центрирование по вертикали */
+    overflow: hidden; /* если нужно обрезать лишнее */
+    border-radius: 10px;
+    border: 1px solid rgb(255, 0, 136);
+}
+
+.image-container img {
+    max-width: 100%; /* ограничение по ширине контейнера */
+    max-height: 100%; /* ограничение по высоте контейнера */
+    object-fit: contain; /* сохраняет пропорции, не обрезает */
+}
+
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #a0142b;
+    border-radius: 100%;
+    opacity: 1;
+    animation: explode 1s forwards;
+}
+@keyframes explode {
+    to {
+        transform: translate(var(--x), var(--y));
+        opacity: 0;
+    }
+}
+
+.button, .btn-rules {
+    width: 300px; /* Фіксована ширина кнопок */
+    height: 25px;
+    padding: 10px 20px; /* Внутрішні відступи */
+    align-items: center;
+    font-weight: bold;
+
+    background-color: rgb(166, 113, 167);
+    border: 1px solid rgb(255, 0, 136);
+    color: rgb(255, 255, 255);
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.button-container, .btn-block {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px;
+}
+
+/*************************************************************************************************************************/
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+    
+.button:active {
+    transform: scale(0.97);
+    background-color: #a0142b;
+    transition: none;
+}
+
+.button:not(:active) {
+    transition-duration: 0.7s; 
+}
+
+
+@media (min-width: 768px) {
+    .button-container {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+    }
+        
+    .button {
+        flex: 1 1 45%; 
+        max-width: 45%;
+    }
+}
+
+
+/*************************************************************************************************************************/
+
+
+.btn-rules {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -2px;
+}
+
+.btn-rules:active {
+    transform: scale(0.97);
+    background-color: #a0142b;
+    transition: none;
+}
+
+.btn-rules:not(:active) {
+    transition-duration: 0.7s;
+}
+
+
+/*Блок, що відкривається при натисканні*/
+
+.btn-content {
+    color: white;
+    background-color: rgb(166, 113, 167);
+    border: 1px solid rgb(255, 0, 136);
+    width: 300px;
+
+    height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    padding: 0;
+    margin: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    
+    transition:
+        height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s ease 0.1s,
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        padding 0.3s ease;
+}
+
+.btn-content.visible {
+    height: auto; 
+    min-height: 0;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 0 20px;
+    margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+    .btn-rules {
+        flex: 1 1 98%;
+        max-width: 98%;
+        width: 98%;
+    }
+    .btn-content.visible {
+        flex: 1 1 98%;
+        max-width: 98%;
+        width: 98%;
+    }
+}
+
+.arrow {
+    width: 15px; 
+    height: 15px;
+    vertical-align: middle; 
+    transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+    transform: rotate(-90deg);
+}
+
+.btn-rab{
+    display: flex;
+    justify-content: center;
+    width: 300px; /* Фіксована ширина кнопок */
+    height: 25px;
+    padding: 10px 20px; /* Внутрішні відступи */
+    align-items: center;
+    font-weight: bold;
+
+    background-color: rgb(166, 113, 167);
+    border: 1px solid rgb(255, 0, 136);
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+
+@media (min-width: 768px) {
+    .btn-rab {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        flex: 1 1 45%; 
+        max-width: 45%;
+    }
+}

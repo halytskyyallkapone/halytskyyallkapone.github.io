@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgba(29, 32, 38);
+}
+
+header {
+    background-color: rgba(29, 32, 38); 
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    color: white;
+    padding: 15px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    max-width: 5000px;
+    margin: 10px 10px 10px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+    border: 1px solid rgba(64, 72, 87);
+    transition-duration: 0.7s; 
+
+    background: rgba(21, 24, 30);
+}
+
+.down {
+    font-size: 10px;
+    opacity: 0.33;
+    text-align: center;
+}
+
+.poloska {
+    display: block;
+    width: 100%; /* Довжина лінії */
+    height: 1px; /* Товщина лінії */
+    background: rgba(64, 72, 87);
+    margin: 10px auto; /* Відступи зверху/знизу + центрування */
+}
+
+.image-container {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: auto; /* или фиксированная ширина, например 500px */
+    height: auto; /* задайте нужную высоту */
+    display: flex;
+    justify-content: center; /* центрирование по горизонтали */
+    align-items: center;     /* центрирование по вертикали */
+    overflow: hidden; /* если нужно обрезать лишнее */
+    border-radius: 10px;
+    border: 1px solid rgba(64, 72, 87);
+}
+
+.image-container img {
+    max-width: 100%; /* ограничение по ширине контейнера */
+    max-height: 100%; /* ограничение по высоте контейнера */
+    object-fit: contain; /* сохраняет пропорции, не обрезает */
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: moveParticle 2s forwards;
+    transform-origin: center;
+}
+
+@keyframes moveParticle {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--x), var(--y));
+    }
+}
+
+.hide-button {
+    opacity: 0;
+    pointer-events: none; /* Забороняє взаємодію з кнопкою */
+    transition: opacity 0.7s ease-out; /* Плавне зникнення */
+}
+

@@ -1,0 +1,72 @@
+.list-base {
+    padding-left: 0;
+    margin-left: 0;
+    list-style: none;
+}
+
+.list-base li {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.list-base li::before {
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.dark-list li::before {
+    content: "⚫";
+    margin-right: 5px;
+}
+
+.red-list li::before {
+    content: "🔴";
+    margin-right: 5px;
+}
+
+.white-list li::before {
+    content: "⚪";
+    margin-right: 5px;
+}
+
+.bm-list {
+    padding-left: 2px;
+}
+
+.vl-list ul,
+.st-list ul,
+.ad-list ul,
+.in-list ul {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.vl-list ul::before,
+.st-list ul::before,
+.in-list ul::before {
+    content: "•";
+}
+
+.vl-list li::before {
+    content: "🔪";
+}
+
+.st-list li::before {
+    content: "🏴";
+}
+
+.ad-list ul::before {
+    content: "+";
+}
+
+.ad-list li::before {
+    content: "🦊";
+}
+
+.in-list li::before {
+    content: "🐈‍⬛";
+}
+
+.sv-list li::before {
+    content: "💣";
+}
