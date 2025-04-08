@@ -126,10 +126,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (savedTheme === 'pink') {
             link.setAttribute('href', '/theme/pink.css');
-            themeToggleButton.textContent = 'Нахуй ці окуляри..';  // Текст для розовой темы
+            themeToggleButton.textContent = 'Ну нахєр...';  // Текст для розовой темы
         } else {
             link.setAttribute('href', '/theme/default.css');
-            themeToggleButton.textContent = '🎀 Рожеві окуляри від Данила 🎀';  // Текст для дефолтной темы
+            themeToggleButton.textContent = '🎀 Пікмі Галицький 🎀';  // Текст для дефолтной темы
         }
     }
 
@@ -142,11 +142,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (current === '/theme/default.css') {
             link.setAttribute('href', '/theme/pink.css');
             localStorage.setItem('theme', 'pink');
-            themeToggleButton.textContent = 'Нахуй ці окуляри..';  // Меняем текст при переключении на розовую тему
+            themeToggleButton.textContent = 'Ну нахєр...';  // Меняем текст при переключении на розовую тему
         } else {
             link.setAttribute('href', '/theme/default.css');
             localStorage.setItem('theme', 'default');
-            themeToggleButton.textContent = '🎀 Рожеві окуляри від Данила 🎀';  // Меняем текст при переключении на дефолтную тему
+            themeToggleButton.textContent = '🎀 Пікмі Галицький 🎀';  // Меняем текст при переключении на дефолтную тему
         }
     });
 
