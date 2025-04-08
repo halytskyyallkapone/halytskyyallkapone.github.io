@@ -67,7 +67,7 @@ header {
     position: absolute;
     width: 5px;
     height: 5px;
-    background-color: #a0142b;
+    background-color: rgb(255, 0, 136);
     border-radius: 100%;
     opacity: 1;
     animation: explode 1s forwards;
