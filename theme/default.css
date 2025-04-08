@@ -65,28 +65,17 @@ header {
 
 .particle {
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    animation: moveParticle 2s forwards;
-    transform-origin: center;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(64, 72, 87);
+    border-radius: 100%;
+    opacity: 1;
+    animation: explode 1s forwards;
 }
-
-@keyframes moveParticle {
-    0% {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-    100% {
-        opacity: 0;
+@keyframes explode {
+    to {
         transform: translate(var(--x), var(--y));
+        opacity: 0;
     }
-}
-
-.hide-button {
-    opacity: 0;
-    pointer-events: none; /* Забороняє взаємодію з кнопкою */
-    transition: opacity 0.7s ease-out; /* Плавне зникнення */
 }
 
