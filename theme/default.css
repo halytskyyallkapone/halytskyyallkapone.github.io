@@ -53,14 +53,14 @@ header {
     justify-content: center; /* центрирование по горизонтали */
     align-items: center;     /* центрирование по вертикали */
     overflow: hidden; /* если нужно обрезать лишнее */
-    border-radius: 10px;
-    border: 1px solid rgba(64, 72, 87);
 }
 
 .image-container img {
     max-width: 100%; /* ограничение по ширине контейнера */
     max-height: 100%; /* ограничение по высоте контейнера */
     object-fit: contain; /* сохраняет пропорции, не обрезает */
+    border-radius: 10px;
+    border: 1px solid rgba(64, 72, 87);
 }
 
 .particle {
