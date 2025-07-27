@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const tg = window.Telegram.WebApp;
+    tg.ready();
+    tg.expand();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.btn-rules').forEach(button => {
         button.addEventListener('click', function() {
             const content = this.nextElementSibling;
@@ -153,3 +159,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Применяем сохраненную тему при загрузке страницы
     applyTheme();
 });
+
+
