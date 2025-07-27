@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const tg = window.Telegram.WebApp;
     tg.ready();
     tg.expand();
+    
+    // Настройка цвета шапки при загрузке страницы
+    setHeaderColor();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -137,6 +140,9 @@ document.addEventListener('DOMContentLoaded', function() {
             link.setAttribute('href', '/theme/default.css');
             themeToggleButton.textContent = '🎀 Пікмі Галицький 🎀';  // Текст для дефолтной темы
         }
+        
+        // Настраиваем цвет шапки при применении темы
+        setHeaderColor();
     }
 
     // Функция для переключения темы
@@ -154,10 +160,29 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', 'default');
             themeToggleButton.textContent = '🎀 Пікмі Галицький 🎀';  // Меняем текст при переключении на дефолтную тему
         }
+        
+        // Настраиваем цвет шапки при переключении темы
+        setHeaderColor();
     });
 
     // Применяем сохраненную тему при загрузке страницы
     applyTheme();
 });
+
+// Функция для настройки цвета шапки Telegram Web App
+function setHeaderColor() {
+    const tg = window.Telegram.WebApp;
+    if (!tg) return;
+    
+    const savedTheme = localStorage.getItem('theme') || 'default';
+    
+    if (savedTheme === 'pink') {
+        // Розовая тема - розовый цвет шапки
+        tg.setHeaderColor('#ffd1ff'); // rgb(255, 209, 255)
+    } else {
+        // Дефолтная тема - темный цвет шапки
+        tg.setHeaderColor('#1d2026'); // rgba(29, 32, 38)
+    }
+}
 
 
