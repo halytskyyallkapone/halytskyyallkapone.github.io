@@ -187,14 +187,26 @@ function setHeaderColor() {
     const tg = window.Telegram.WebApp;
     if (!tg) return;
     
-    const savedTheme = localStorage.getItem('theme') || 'default';
+    // Проверяем, находимся ли мы на главной странице index.html
+    const currentPath = window.location.pathname;
+    const isIndexPage = currentPath === '' || 
+                       currentPath === '/' ||
+                       currentPath.endsWith('index.html');
     
-    if (savedTheme === 'pink') {
-        // Розовая тема - розовый цвет шапки
-        tg.setHeaderColor('#ffd1ff'); // rgb(255, 209, 255)
+    if (isIndexPage) {
+        // На главной странице - черный цвет шапки
+        tg.setHeaderColor('#000000'); // Черный цвет
     } else {
-        // Дефолтная тема - темный цвет шапки
-        tg.setHeaderColor('#1d2026'); // rgba(29, 32, 38)
+        // На остальных страницах - подстройка под тему
+        const savedTheme = localStorage.getItem('theme') || 'default';
+        
+        if (savedTheme === 'pink') {
+            // Розовая тема - розовый цвет шапки
+            tg.setHeaderColor('#ffd1ff'); // rgb(255, 209, 255)
+        } else {
+            // Дефолтная тема - темный цвет шапки
+            tg.setHeaderColor('#1d2026'); // rgba(29, 32, 38)
+        }
     }
 }
 
@@ -213,12 +225,8 @@ function setupHeaderButton() {
                          currentPath === '/index.html';
     
     if (isWelcomePage) {
-        // На странице welcome.html - кнопка "Закрыть"
-        tg.MainButton.setText('Закрыть');
-        tg.MainButton.onClick(() => {
-            tg.close();
-        });
-        tg.MainButton.show();
+        // На странице welcome.html - скрываем кнопку
+        tg.MainButton.hide();
     } else {
         // На остальных страницах - кнопка "Назад"
         tg.MainButton.setText('Назад');
