@@ -1,13 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const tg = window.Telegram.WebApp;
-    tg.ready();
-    tg.expand();
+    // Инициализация Telegram Web App с проверкой
+    function initTelegramApp() {
+        const tg = window.Telegram.WebApp;
+        if (tg) {
+            tg.ready();
+            tg.expand();
+            
+            // Настройка цвета шапки при загрузке страницы
+            setHeaderColor();
+            
+            // Настройка кнопки в шапке
+            setupHeaderButton();
+        } else {
+            // Если Telegram Web App еще не загружен, пробуем через небольшую задержку
+            setTimeout(initTelegramApp, 100);
+        }
+    }
     
-    // Настройка цвета шапки при загрузке страницы
-    setHeaderColor();
-    
-    // Настройка кнопки в шапке
-    setupHeaderButton();
+    initTelegramApp();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -191,12 +201,16 @@ function setHeaderColor() {
 // Функция для настройки кнопки в шапке Telegram Web App
 function setupHeaderButton() {
     const tg = window.Telegram.WebApp;
-    if (!tg) return;
+    if (!tg) {
+        return;
+    }
     
     // Проверяем, находимся ли мы на странице welcome.html
-    const isWelcomePage = window.location.pathname.endsWith('welcome.html') || 
-                         window.location.pathname.endsWith('/') ||
-                         window.location.pathname === '';
+    const currentPath = window.location.pathname;
+    const isWelcomePage = currentPath.endsWith('welcome.html') || 
+                         currentPath.endsWith('/') ||
+                         currentPath === '' ||
+                         currentPath === '/index.html';
     
     if (isWelcomePage) {
         // На странице welcome.html - кнопка "Закрыть"
@@ -209,7 +223,15 @@ function setupHeaderButton() {
         // На остальных страницах - кнопка "Назад"
         tg.MainButton.setText('Назад');
         tg.MainButton.onClick(() => {
-            window.location.href = 'welcome.html';
+            // Определяем правильный путь к welcome.html
+            let backPath = 'welcome.html';
+            
+            // Если мы в папке player, нужно подняться на уровень выше
+            if (currentPath.includes('/player/')) {
+                backPath = '../welcome.html';
+            }
+            
+            window.location.href = backPath;
         });
         tg.MainButton.show();
     }
