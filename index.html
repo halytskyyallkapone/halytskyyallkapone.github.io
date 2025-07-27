@@ -16,7 +16,23 @@
     <title>Русофобія</title>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
+    <script>
+        // Инициализация Telegram Web App
+        const tg = window.Telegram.WebApp;
+        if (tg) {
+            tg.ready();
+            tg.expand();
+            
+            // Настройка цвета шапки для главной страницы (черный цвет) с небольшой задержкой
+            setTimeout(() => {
+                tg.setHeaderColor('#000000');
+            }, 50);
+        }
+        
+        setTimeout(function() {
+            window.location.href = "welcome.html"; // Замените на URL вашей основной страницы
+        }, 1000); // 3000 миллисекунд = 3 секунды
+    </script>
     <style>
         body {
             margin: 0;
@@ -67,22 +83,6 @@
         <div class="progress"></div>
     </div>
     <p>Галицький All Capone//Mafia</p>
-
-    <script>
-        // Инициализация Telegram Web App
-        const tg = window.Telegram.WebApp;
-        if (tg) {
-            tg.ready();
-            tg.expand();
-            
-            // Настройка цвета шапки для главной страницы (темная тема)
-            tg.setHeaderColor('#1d2026'); // rgba(29, 32, 38)
-        }
-        
-        setTimeout(function() {
-            window.location.href = "welcome.html"; // Замените на URL вашей основной страницы
-        }, 1000); // 3000 миллисекунд = 3 секунды
-    </script>
 
 </body>
 </html>
