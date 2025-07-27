@@ -6,8 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
             tg.ready();
             tg.expand();
             
-            // Настройка цвета шапки при загрузке страницы
-            setHeaderColor();
+            // Проверяем, находимся ли мы на главной странице index.html
+            const currentPath = window.location.pathname;
+            const isIndexPage = currentPath === '' || 
+                               currentPath === '/' ||
+                               currentPath.endsWith('index.html');
+            
+            // Настраиваем цвет шапки только если это НЕ главная страница
+            if (!isIndexPage) {
+                setHeaderColor();
+            }
             
             // Настройка кнопки в шапке
             setupHeaderButton();
