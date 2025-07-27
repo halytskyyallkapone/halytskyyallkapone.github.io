@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Настройка цвета шапки при загрузке страницы
     setHeaderColor();
+    
+    // Настройка кнопки в шапке
+    setupHeaderButton();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -182,6 +185,33 @@ function setHeaderColor() {
     } else {
         // Дефолтная тема - темный цвет шапки
         tg.setHeaderColor('#1d2026'); // rgba(29, 32, 38)
+    }
+}
+
+// Функция для настройки кнопки в шапке Telegram Web App
+function setupHeaderButton() {
+    const tg = window.Telegram.WebApp;
+    if (!tg) return;
+    
+    // Проверяем, находимся ли мы на странице welcome.html
+    const isWelcomePage = window.location.pathname.endsWith('welcome.html') || 
+                         window.location.pathname.endsWith('/') ||
+                         window.location.pathname === '';
+    
+    if (isWelcomePage) {
+        // На странице welcome.html - кнопка "Закрыть"
+        tg.MainButton.setText('Закрыть');
+        tg.MainButton.onClick(() => {
+            tg.close();
+        });
+        tg.MainButton.show();
+    } else {
+        // На остальных страницах - кнопка "Назад"
+        tg.MainButton.setText('Назад');
+        tg.MainButton.onClick(() => {
+            window.location.href = 'welcome.html';
+        });
+        tg.MainButton.show();
     }
 }
 
