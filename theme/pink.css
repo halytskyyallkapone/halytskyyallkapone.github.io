@@ -107,7 +107,11 @@ header {
 
 .button {
     display: flex;
-    justify-content: center;
+    justify-content: center; 
+    align-items: center;     
+    margin: auto; 
+    text-align: center;
+    padding: 10px 20px; 
 }
     
 .button:active {
