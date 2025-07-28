@@ -253,4 +253,99 @@ function setupHeaderButton() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    // Перевіряємо, чи ми на сторінці з івентами (тут перевірка за URL)
+    const isEventsPage = window.location.pathname.includes("FAQ-event.html") || window.location.pathname.endsWith("events.html");
+    if (!isEventsPage) return; // Вихід, якщо не сторінка івентів
+
+    // Знаходимо всі елементи з класом "btn-block"
+    document.querySelectorAll(".btn-block").forEach(block => {
+        // Обробник ПКМ (правий клік миші)
+        block.addEventListener("contextmenu", e => {
+            e.preventDefault(); // Блокуємо стандартне контекстне меню браузера
+            if (block.id) {
+                copyLink(block.id); // Копіюємо посилання з id блока
+            } else {
+                showCopiedMsg("Помилка: у цього івенту немає ідентифікатора"); // Показуємо помилку, якщо id немає
+            }
+        });
+
+        // Обробник початку торкання пальцем (для мобільних)
+        block.addEventListener("touchstart", () => {
+            block.dataset.touchStart = Date.now(); // Запам’ятовуємо час початку торкання
+        });
+
+        // Обробник завершення торкання пальцем
+        block.addEventListener("touchend", () => {
+            const time = Date.now() - block.dataset.touchStart; // Визначаємо тривалість тапу
+            if (time > 500) { // Якщо тап довгий (понад 500 мс)
+                if (block.id) {
+                    copyLink(block.id); // Копіюємо посилання з id блока
+                } else {
+                    showCopiedMsg("Помилка: відсутній ідентифікатор"); // Показуємо помилку, якщо id немає
+                }
+            }
+        });
+    });
+
+    // Функція копіювання посилання у буфер обміну
+    function copyLink(id) {
+        const url = `${window.location.origin}${window.location.pathname}#${id}`; // Формуємо посилання
+        navigator.clipboard.writeText(url).then(() => {
+            showCopiedMsg("Посилання скопійовано!"); // Показуємо повідомлення про успіх
+        }).catch(() => {
+            showCopiedMsg("Не вдалося скопіювати посилання"); // Показуємо повідомлення про помилку
+        });
+    }
+
+    /**
+     * Функція створює тимчасове повідомлення у вигляді "тосту" (toast),
+     * яке з’являється у нижній частині екрану і плавно зникає через 2 секунди.
+     */
+    function showCopiedMsg(message) {
+        const toast = document.createElement("div"); // Створюємо елемент для повідомлення
+        toast.textContent = message; // Вставляємо текст повідомлення
+
+        // Задаємо стилі для повідомлення
+        Object.assign(toast.style, {
+            position: "fixed",
+            bottom: "30px",
+            left: "50%",
+            transform: "translateX(-50%) translateY(20px)",
+            background: "rgba(0, 0, 0, 0.8)",
+            color: "#fff",
+            padding: "12px 24px",
+            borderRadius: "6px",
+            fontSize: "16px",
+            opacity: "0",
+            pointerEvents: "none",
+            transition: "opacity 0.3s ease, transform 0.3s ease",
+            zIndex: "9999",
+        });
+
+        document.body.appendChild(toast); // Додаємо повідомлення до DOM
+
+        // Запускаємо анімацію появи
+        requestAnimationFrame(() => {
+            toast.style.opacity = "1";
+            toast.style.transform = "translateX(-50%) translateY(0)";
+        });
+
+        // Через 1.7 секунди починаємо анімацію зникнення
+        setTimeout(() => {
+            toast.style.opacity = "0";
+            toast.style.transform = "translateX(-50%) translateY(20px)";
+        }, 1700);
+
+        // Після завершення анімації видаляємо повідомлення з DOM
+        toast.addEventListener("transitionend", () => {
+            if (toast.style.opacity === "0") {
+                toast.remove();
+            }
+        }, { once: true }); // Обробник спрацює один раз і відпишеться
+    }
+});
+
+
+
 
