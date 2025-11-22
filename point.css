@@ -70,3 +70,7 @@
 .sv-list li::before {
     content: "💣";
 }
+
+.ct-list li::before {
+    content: "🎨 ";
+}
