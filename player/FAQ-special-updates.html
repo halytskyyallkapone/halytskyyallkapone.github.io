@@ -17,109 +17,189 @@
 
     <body>
 
-        <header style="color: #d01d3e;">🌹 Сезоні івенти та бафи ☕️</header>
+        <header style="color: #d01d3e;">🌹 Бафи ☕️</header>
         
         <div class="container">
 
 
             <h2>Бафи, або ж іншими словами "Cпеціальні можливості".</h2>
-            
-            <p>Це предмети, які ти можеш придбати в боті мафії, викликавши команду /profile та натиснувши кнопочку "магазин".</p>
-            <p>Після того, як ти потрапив магазин ти можеш обрати бафи, які тобі до вподоби і на які у тебе достатньо гршей, що вони роблять, і які вони є ти зможеш ознайомитися в тому самому магазині.</p>
+            <p>Бафи – це предмети з підпілля Галичини, що надають ігрову перевагу. Ти можеш придбати їх у боті, викликавши команду /profile та натиснувши кнопку «Крамниця».</p>
+            <p>📍 Коли ти потрапиш у крамницю, зможеш обрати бафи, на які в тебе вистачає грошей. Ознайомитися з їхнім описом та дією можна безпосередньо в меню крамниці.</p>
 
             <h2>Івентові бафи</h2>
-
-            <p>Це предмети та механіки, які з'являються в грі, лише у сезони свят.</p>
-
-            <span class="poloska"></span>
-
-            <h3 style="color: #b2f9ff;">Зимовий івент</h3>
-
-            <div class="button-container">
-                <a href="FAQ-role.html#mikola" class="button">Нова роль: 🎅 Святий Миколай</a>
-                <a href="FAQ-role.html#krampus" class="button">Нова роль: 😈 Крампус</a>
-                <a href="FAQ-event.html#SantaKidnapping" class="button">🎅❄️ Викрадення Миколая ❄️🎅</a>
-            </div>
-
-            <p>під час зимового івенту зʼявляються нові предмети і механіки, такі як:</p>
-
-            <h3 style="color: #b2f9ff;">Хурделиця</h3>
-            <p>Хурделиця - випадковим чином глушить, або ж вбиває гравця вночі. Якщо від неї ухилитися - отримуєш сніжки. Врятуватися від Хурделиці можна лише за допомогою какао.</p>
-
-            <h3 style="color: #b2f9ff;">☕️ Какао</h3>
-            <p>Зігріє холодними ночами та врятує від Хурделиці.</p>
-
-            <h3 style="color: #b2f9ff;">❄️ Сніжка</h3>
-            <p>Як користуватися?</p>
-            <ul class ="list-base bm-list">
-                <li>Під час гри, бот запропонує "погратися в сніжки" разом із кнопкою нічної дії. Оберіть кількість сніжок, які хочете кинути в іншого гравця.</li>
-                <li>Увага! Якщо обираєте "погратися в сніжки", пропускаєте свій нічний хід.</li>
-                <li>Сніжками можна користуватися й поза грою. Для цього використовуйте команду /snow_battle, оберіть опонента та закидайте його сніжками.</li>
-            </ul>
-
-            <p>Наслідки в грі:</p>
-            <ul class ="list-base bm-list">
-                <li>Рандомний ефект: чим більше сніжок, тим вища ймовірність заглушити (на одну ніч) або вбити іншого гравця.</li>                                
-            </ul>
+            <p>Унікальні бафи – це предмети, які з’являються в грі лише після використання бафу «Прохід у портал».</p>
+            <p>📍 Твоє завдання – пройти сюжет від початку до кінця, щоб отримати ці особливі можливості.</p>
 
             <span class="poloska"></span>
 
-            <h3 style="color: #ae3d8e;">Івенти до дня закоханих</h3>
+        <h3 style="color: #b2f9ff;">Стандартні бафи</h3>
 
-            <div class="button-container">
-                <a href="FAQ-event.html#Cupid" class="button">🔪🩸 Жорстокий амур 🩸🔪</a>
-                <a href="FAQ-event.html#Valentin" class="button">🩸🫀 Мій кривавий Валентин 🩸🫀</a>
-            </div>
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🔫 Tommy Gun
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>Відбиває нічний замах, натомість забирає нападаючого на інший світ.</p>
+                    </div>
+                </div>
 
-            <h3 style="color: #ae3d8e;">Бафи до дня закоханих</h3>
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🔪 Заточка
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>Дозволяє вбити будь-якого гравця незалежно від його ролі.</p>
+                    </div>
+                </div>
 
-            <a href="FAQ-role.html#amur" class="button">Нова роль: 💘 Амур</a>
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🚘 Чорний «Опель»
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>Дає можливість уникнути страти під час денного голосування.</p>
+                    </div>
+                </div>
 
-            <h3 style="color: #ae3d8e;">🌹троянда</h3>
-            <p>Усі гравці, відвідані Амуром, отримають троянди, які можна комусь подарувати (як валентинки).</p>
-            <p>у вас є можливість надсилати цілі букети! Маленький, середній та великий (для найзаможніших) — 9, 25 та 101 троянда відповідно 💐.</p>
-            <p>Щоб відправити троянду потрібно в боті мафії ввести команлу: !rose юзер/нік/айді «текст» «9/25/101»</p>
-            <p>Окрім того, є команда !voice_rose. Разом із нею обов'язково залишати посилання 🗣</p>
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🎩 Капелюх Капоне
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>Робить тебе недоступним для вбивства, перевірки та дій активних ролей на одну ніч.</p>
+                    </div>
+                </div>
+
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🔦 Ліхтарик
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>Якщо тебе вбили – наступного ранку покаже, хто саме це зробив.</p>
+                    </div>
+                </div>
+
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🧴 Парфум
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>Різкий запах відлякує Коханку. Цієї ночі вона не зможе заблокувати твій хід.</p>
+                    </div>
+                </div>
+
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🐈‍⬛ Чорний кіт
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>Вистежує гравця з Парфумом і таємно передає інформацію Коханці. Повністю захищає її від дії Парфуму.</p>
+                    </div>
+                </div>
+
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        📿 Талісман
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>Один раз рятує тебе від смерті (фатального пострілу).</p>
+                    </div>
+                </div>
+
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🪪 Паспорт Лиса
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>Фальшивий паспорт збиває зі сліду: якщо цієї ночі хтось спробує перевірити твою роль – перевірка не спрацює.</p>
+                    </div>
+                </div>
+
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🌀 Прохід у портал
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>Одноразовий доступ до Порталу. Там на тебе чекають сюжет та унікальні бафи.</p>
+                    </div>
+                </div>
+            
 
             <span class="poloska"></span>
 
-            <h3 style="color: #52c088;">Бафи до Великодня</h3>
+  
+            <h3 style="color: #ae3d8e;">Унікальні бафи</h3>
 
-            <a href="FAQ-role.html#mavka" class="button">Нова роль: 🧝🏼‍♀️ Мавка</a>
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        ✨ Пальоні парфуми Gucci
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>«Ефект шлейфу»: Настільки сильний аромат, що Комісар "чхає" і помилково перевіряє випадкового гравця поруч із вами замість вас.</p>
+                    </div>
+                </div>
 
-            <h3 style="color: #52c088;">🧺 Великодній кошик</h3>
-            <p>Знайти його ви можете у профілі (/profile). У ньому ви накопичуєте різні предмети, які можна обміняти на випадковий баф 💠, гроші 💸 чи золото💰</p>
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🎀 Кольорова стрічка
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>«Мітка своїх»: Ви пов'язуєте стрічку на іншого гравця. Якщо цієї ночі його намагатимуться вбити, він виживе, але ви втратите цей баф назавжди.</p>
+                    </div>
+                </div>
 
-            <h3 style="color: #52c088;">🧄 Часник</h3>
-            <p>Захищає вас від Мавки.</p>
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🌻 Стаканчик насіння
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>«Заговорити зуби»: Ви обираєте гравця, з яким «лускаєте насіння». Ця людина пропускає нічне голосування або використання своєї ролі, бо була надто зайнята розмовами.</p>
+                    </div>
+                </div>
 
-            <h3 style="color: #52c088;">🍷 Вино</h3>
-            <p>Тепер від волоцюги можна відкупитись вином. Він або вас не побачить, або побачить іншу особу (навіть мертву ☠️)</p>
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🌊 Дух 2021
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>«Ковідна ізоляція»: Ви відправляєте гравця на самоізоляцію. Він не може ні на кого впливати, але й ніхто не може вплинути на нього (повний імунітет на ніч).</p>
+                    </div>
+                </div>
 
-            <h3 style="color: #52c088;">🥚 Яйця</h3>
-            <p>Битва крашанками (/egg_battle). У ній нічого особливого немає, але ми зберігаємо ваші битви і пізніше зможемо вивести якийсь топ, а ще подаруночки 🎁</p>
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🍟 Запах фрі
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>«Фастфуд-пастка»: Ви залишаєте «запах» біля іншого гравця. Всі, хто прийдуть до нього вночі (вбивці, лікар, Комісар), замість своєї дії просто «купують картоплю» і нічого не роблять.</p>
+                    </div>
+                </div>
 
+                <div class="btn-block">
+                    <div class="btn-rules" onclick="toggleContent(this)">
+                        🍰 Київський смак
+                        <img src="../materials/arrow.png" alt="arrow" class="arrow">
+                    </div>
+                    <div class="btn-content">
+                        <p>«Солодкий підкуп»: Ви пригощаєте гравця шматочком торта. Якщо завтра на голосуванні він захоче проголосувати проти вас, його голос анулюється.</p>
+                    </div>
+                </div>
 
-            <h4>На Великдень дещо оновили тексти. Ні, це не нові ролі, це просто інші назви. Шпаргалка:</h4>
-            <ul class="list-base">
-                <li>📌 Дон — Митрополит;</li>
-                <li>📌 Мафія — Піп УПЦ (МП);</li>
-                <li>📌 Мирний Житель — Вірянин;</li>
-                <li>📌 Слідчий — Голова служби безпеки;</li>
-                <li>📌 Сержант — Заступник голови;</li>
-                <li>📌 Лікар — Медик;</li>
-                <li>📌 Самогубець — Грішник;</li>
-                <li>📌 Повія — Ксюша Манекен;</li>
-                <li>📌 Маніяк — Антихрист;</li>
-                <li>📌 Волоцюга — Жебрак;</li>
-                <li>📌 Адвокат — Диявол;</li>
-                <li>📌 Баламут — Марновірник;</li>
-                <li>📌 Щасливчик — Богдан;</li>
-                <li>📌 Камікадзе — Байрактар;</li>
-                <li>📌 Чарівник — Волхв.</li>
-                    </li>       
-            </ul>
-        
             <span class="poloska"></span>
             <p class="down">🏴Галицький All Capone//Mafia🏴 January 17, 2024</p>
         </div>
